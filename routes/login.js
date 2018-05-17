@@ -87,7 +87,7 @@ app.post('/google', async(req, res) => {
             usuario.google = true;
             usuario.password = ':)';
 
-            usuario.save((err, usuarioDB) => {
+            usuario.save((err, usuario) => {
 
                 // Creacion del token
                 var token = jwt.sign({ usuario: usuarioDB }, SEED, { expiresIn: 14400 }); // 4 horas
